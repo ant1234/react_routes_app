@@ -22,11 +22,12 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import EventsPage from './pages/EventsPage';
+import EventsList from './pages/EventsList';
 import EventsDetailPage from './pages/EventsDetailPage';
 import EditEventPage from './pages/EditEventPage';
 import RootPage from './pages/RootPage';
 import ErrorPage from './pages/ErrorPage';
+import EventsRoot from './components/EventsRoot';
 
 const router = createBrowserRouter([
   {
@@ -34,10 +35,16 @@ const router = createBrowserRouter([
     element: <RootPage />,
     errorElement: <ErrorPage />,
     children: [
-      {path: '/', element: <HomePage/>},
-      {path: '/events', element: <EventsPage /> },
-      {path: '/events/:id', element: <EventsDetailPage/> },
-      {path: '/events/:id/edit', element: <EditEventPage/> },
+      { 
+        path: 'events', 
+        element: <EventsRoot />,
+        children: [
+          {path: '', element: <EventsList /> },
+          {path: ':id', element: <EventsDetailPage/> },
+          {path: ':id/edit', element: <EditEventPage/> },
+        ],
+      },
+      {path: '', element: <HomePage/>},
     ] 
   },
 

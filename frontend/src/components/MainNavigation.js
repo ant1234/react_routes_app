@@ -8,26 +8,18 @@ function MainNavigation() {
           <li>
             <NavLink
               to={`/`}
-              className={({ isActive, isPending }) =>
-                isActive
-                  ? "active"
-                  : isPending
-                  ? "pending"
-                  : ""
+              className={({ isActive }) =>
+                isActive ? classes.active : ''
               }
-            >
+            end>
             Home
               </NavLink>
           </li>
           <li>
             <NavLink
               to={`/events`}
-              className={({ isActive, isPending }) =>
-                isActive
-                  ? "active"
-                  : isPending
-                  ? "pending"
-                  : ""
+              className={({ isActive }) =>
+                isActive ? classes.active : ''
               }
             >
             Events
