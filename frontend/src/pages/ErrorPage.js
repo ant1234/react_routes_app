@@ -1,5 +1,19 @@
+import PageContent from './PageContent';
+import { useRouteError } from 'react-router-dom';
+
 const ErrorPage = () => {
-    return <p>I'm sorry the page you are looking for is not found.</p>
+
+    let message = "Something went wrong.";
+    const error = useRouteError();
+    
+console.log(error);
+    if(error.status === 500) {
+        message = error.data.message;
+    }
+
+    return <PageContent title="Error content">
+        <p>{message}</p>
+    </PageContent>
 };
 
 export default ErrorPage;
