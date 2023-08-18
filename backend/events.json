@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"eded","image":"https://cdn.eventfinda.co.nz/uploads/events/transformed/1874188-807587-35.jpg","date":"2023-08-20","description":"cdcdc","id":"2a250390-9660-4c18-bd26-ef56110d763c"},{"title":"Dunedin event","image":"https://cdn.eventfinda.co.nz/uploads/events/transformed/1874188-807587-35.jpg","date":"2023-08-20","description":"Event in the city","id":"8d82e1e8-7fd3-48af-b592-38900e79a5ed"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
