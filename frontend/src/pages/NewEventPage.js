@@ -2,7 +2,7 @@ import EventForm from "../components/EventForm"
 import { json, redirect } from 'react-router-dom';
 
 const NewEventPage = () => {
-    return <EventForm/>
+    return <EventForm method="post"/>
 };
 
 export default NewEventPage;
@@ -23,6 +23,10 @@ export async function action({request, params}) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formData),
     });
+
+    if(response.status === 422) {
+        return response;
+    }
 
     if(!response.ok) {
         throw json({message: 'Could not load event'}, {status: 500});
