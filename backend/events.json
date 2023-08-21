@@ -1,1 +1,12 @@
-{"events":[{"title":"Life drawing","image":"https://cdn.eventfinda.co.nz/uploads/events/transformed/1847991-798911-35.jpg","date":"2023-08-26","description":"Life drawing tutored course in Dunedin","id":"788cc9e5-7838-478c-b906-955130932d84"},{"title":"Dunedin event!!","image":"https://cdn.eventfinda.co.nz/uploads/events/transformed/1874188-807587-35.jpg","date":"2023-08-20","description":"Event in the city","id":"8d82e1e8-7fd3-48af-b592-38900e79a5ed"}]}
+{
+  "events": [
+    {
+      "title": "A new event",
+      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
+      "date": "2022-10-01",
+      "description": "Some awesome event!",
+      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+    }
+  ],
+  "users": []
+}

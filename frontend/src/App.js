@@ -30,6 +30,7 @@ import ErrorPage from './pages/ErrorPage';
 import EventsRoot from './components/EventsRoot';
 import { EventLoader } from './pages/EventsList';
 import NewEventPage  from './pages/NewEventPage';
+import AuthForm from './components/AuthForm';
 import { action as ManipulateEventAction } from './components/EventForm';
 
 const router = createBrowserRouter([
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {index: true, path: '', element: <HomePage/>},
+      {path: 'auth', element: <AuthForm/>},
       { 
         path: 'events', 
         element: <EventsRoot />,
