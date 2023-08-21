@@ -23,7 +23,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import EventsList from './pages/EventsList';
-import EventsDetailPage, { loader as EventDetailLoader, action as EventDetailDeleteAction } from './pages/EventsDetailPage';
+import EventsDetailPage, { loader as EventDetailLoader, action as EventDetailDeleteAction, action } from './pages/EventsDetailPage';
 import EditEventPage from './pages/EditEventPage';
 import RootPage from './pages/RootPage';
 import ErrorPage from './pages/ErrorPage';
@@ -32,6 +32,7 @@ import { EventLoader } from './pages/EventsList';
 import NewEventPage  from './pages/NewEventPage';
 import AuthForm from './components/AuthForm';
 import { action as ManipulateEventAction } from './components/EventForm';
+import AuthenticationPage, { action as AuthAction} from './pages/Authentication';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {index: true, path: '', element: <HomePage/>},
-      {path: 'auth', element: <AuthForm/>},
+      {
+        path: 'auth', 
+        element: <AuthenticationPage/>,
+        action: AuthAction,
+      },
       { 
         path: 'events', 
         element: <EventsRoot />,
