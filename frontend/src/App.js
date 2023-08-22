@@ -33,18 +33,26 @@ import NewEventPage  from './pages/NewEventPage';
 import AuthForm from './components/AuthForm';
 import { action as ManipulateEventAction } from './components/EventForm';
 import AuthenticationPage, { action as AuthAction} from './pages/Authentication';
+import { action as LogoutAction } from './pages/Logout';
+import { tokenLoader, checkAuthLoader } from './util/auth';
 
 const router = createBrowserRouter([
   {
     path: '/', 
     element: <RootPage />,
     errorElement: <ErrorPage />,
+    id: 'root',
+    loader: tokenLoader,
     children: [
       {index: true, path: '', element: <HomePage/>},
       {
         path: 'auth', 
         element: <AuthenticationPage/>,
         action: AuthAction,
+      },
+      {
+        path: 'logout', 
+        action: LogoutAction,
       },
       { 
         path: 'events', 
@@ -61,9 +69,9 @@ const router = createBrowserRouter([
             loader: EventDetailLoader,
             children: [
             {index: true, element: <EventsDetailPage/>, action: EventDetailDeleteAction},
-            {path: 'edit', element: <EditEventPage/>,  action: ManipulateEventAction},
+            {path: 'edit', element: <EditEventPage/>,  action: ManipulateEventAction, loader: checkAuthLoader},
           ]},
-          {path: 'new', element: <NewEventPage/>, action: ManipulateEventAction}
+          {path: 'new', element: <NewEventPage/>, action: ManipulateEventAction, loader: checkAuthLoader}
         ],
       },
     ] 
